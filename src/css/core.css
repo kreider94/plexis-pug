@@ -1,0 +1,308 @@
+html, body, svg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+}
+
+.links line {
+  /*stroke: #999;*/
+  stroke: url(#linear-gradient);
+  fill: none stroke-opacity: 0.6;
+}
+
+#login-sc {
+  background-image: url('https://connect.soundcloud.com/2/btn-connect-sc-l.png');
+  width: 244px;
+  height: 31px;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+/* .artbox {
+  position: absolute;
+  visibility: hidden;
+  border: 1px solid black;
+  width: auto;
+  height: 22px;
+  text-align: center;
+  padding: 3px;
+  background-color: black;
+  text-transform: capitalize;
+  border-radius: 4px;
+  padding: 5px;
+  bottom: 0px;
+  left: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+  -moz-box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+  box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+} */
+
+div>a {
+  text-transform: capitalize;
+  background-color: black;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#play {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+
+.curruser {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 45px;
+  right: 15px;
+  border: 1px solid black;
+  text-transform: capitalize;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+  -moz-box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+  box-shadow: 1px 3px 60px 17px rgba(140, 133, 140, 0.69);
+}
+
+/* .front {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000px;
+} */
+
+.mainpage {
+  display: none;
+}
+
+#frontlogo {
+  /*width: 50%;*/
+  -webkit-filter: invert(100%);
+  align-content: center;
+  display: block;
+  position: absolute;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) display: block;
+  float: right;
+  position: absolute;
+  /*newly added*/
+}
+
+#logo {
+  -webkit-filter: invert(100%);
+  position: absolute;
+  padding-left: 1%;
+  padding-top: 1%;
+  color: black;
+  font-color: black;
+  font-family: 'Istok Web', sans-serif;
+  width: 320px;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+#middlelogo {
+  position: absolute;
+  align-content: center;
+  top: 30%;
+  left: 20%;
+  width: 50%;
+  height: 50%;
+  border: 1px;
+  z-index: 50;
+}
+
+#followbtn {
+  position: absolute;
+  right: 15px;
+  top: 203px;
+  border-radius: 4px;
+}
+
+#login-sc {
+  position: relative;
+  display: block;
+  align-content: center;
+  margin-left: 50%;
+  top: 60%;
+}
+
+#visimage {
+  width: 100%;
+  height: 100%;
+}
+
+#currname {
+  font-size: 22px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: auto;
+  height: 25px;
+  z-index: 100;
+}
+
+#sc-widget {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+#searchsc {
+  clear: both;
+}
+
+#artist-go {
+  position: absolute;
+  margin-bottom: 115px;
+  margin-left: 0px;
+}
+
+#homebtn {
+  position: relative;
+  margin-top: 36px;
+  margin-left: -23%;
+  height: 25px;
+  width: 25px;
+  float: center;
+}
+
+#searchbar {
+  position: absolute;
+  font-family: 'Istok Web', sans-serif;
+}
+
+/* body {
+  background: -moz-linear-gradient(top, rgba(19, 239, 169, 1) 0%, rgba(18, 219, 163, 1) 13%, rgba(14, 160, 144, 0.79) 51%, rgba(9, 83, 119, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(19, 239, 169, 1) 0%, rgba(18, 219, 163, 1) 13%, rgba(14, 160, 144, 0.79) 51%, rgba(9, 83, 119, 1) 100%);
+  background: linear-gradient(to bottom, rgba(19, 239, 169, 1) 0%, rgba(18, 219, 163, 1) 13%, rgba(14, 160, 144, 0.79) 51%, rgba(9, 83, 119, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13efa9', endColorstr='#095377', GradientType=0);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+} */
+
+.visited {
+  opacity: 0;
+  position: absolute;
+  float: left;
+  width: 200px;
+  top: 25%;
+  height: 50%;
+  text-transform: capitalize;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+div.visited li>img {
+  list-style-type: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.visited li {
+  list-style-type: none;
+}
+
+#rollover {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  w3-animate-left: -10px;
+}
+
+/*.axis text {
+font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}*/
+/*.spotify-embed {
+background: #282828;
+&:not(:last-of-type) {
+margin-bottom: 5px;
+}
+
+iframe {
+display: block;
+transition: opacity 0.125s;
+.js & {
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+}
+}*/
+/* #middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+} */
+
+.pathdash {
+  stroke-dasharray: 800;
+  animation: draw 2s ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1400;
+  }
+
+  to {
+    stroke-dashoffset: 2000;
+  }
+}
+
+.hoverdash {
+  stroke-dasharray: 20;
+  animation: draw 4s linear;
+  animation-duration: 5s;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1400;
+  }
+
+  to {
+    stroke-dashoffset: 2000;
+  }
+}
+
+#deezer-widget {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
