@@ -101,8 +101,8 @@ define(['require', 'neo4j', 'd3/dist/d3.min'], function (require, neo4j, d3) {
 
         var nodes;
 
-        // canvas = canvas.append('g')
-        // .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        canvas = canvas.append('g')
+        .attr("transform", "translate(" + window.innerWidth / 2 + "," + window.innerHeight / 2 + ")");
 
         for (let i = 0; i < data.nodes.length; i++) {
           for (let j = i + 1; j < data.nodes.length; j++) {
@@ -118,14 +118,6 @@ define(['require', 'neo4j', 'd3/dist/d3.min'], function (require, neo4j, d3) {
         simulate();
 
         function draw() {
-          // Draw links.
-          var defs = vis.insert("svg:defs")
-               .data(["end"]);
-
-
-          defs.enter().append("svg:path")
-          var links = d3.layout.tree().links(data.nodes);
-
           canvas.append("g")
             .selectAll("line")
             .data(data.links)
@@ -159,7 +151,7 @@ define(['require', 'neo4j', 'd3/dist/d3.min'], function (require, neo4j, d3) {
               .attr("fill",function(d) { return "url(#image"+ d.id +")" }  )
               .attr("r", 35)
 
-          $('body').append(canvas);
+          // $('body').append(canvas);
           $('#middlelogo').hide();
         }
 
@@ -167,56 +159,25 @@ define(['require', 'neo4j', 'd3/dist/d3.min'], function (require, neo4j, d3) {
           // Remove all existing elements from the canvas.
           canvas.selectAll("*").remove();
 
-          // Create a new force simulation and assign forces.
           var simulation = d3.forceSimulation(data.nodes)
-            .force("charge", d3.forceManyBody().strength(-60))
-            .force("center", d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2))
-            .force('collision', d3.forceCollide().radius(function(d) {
-              return d.radius
-            }))
-            .force(
-              "link", d3.forceLink(data.links).strength(d => 0.5)
-            )
-            .force("manyBody", d3.forceManyBody());
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force('collision', d3.forceCollide().radius(20))
+            .force("link", d3.forceLink(data.links).distance(20))
+              // .strength(0.5).iterations(5))
+            .force("center", d3.forceCenter())
+            .force("x", d3.forceX())
+            .force("y", d3.forceY())
 
-          draw();
-          simulation.on("tick", () => {
-              canvas.selectAll("line").attr("d", function(d) {
+          d3.timeout(function() {
+            // loading.remove();
+            d3.select("middle").append("svg");
 
-              var dx = d.target.x - d.source.x,
-                    dy = d.target.y - d.source.y,
-                    dr = Math.sqrt(dx * dx + dy * dy);
-                    return   "M" + d.source.x + ","
-                     + d.source.y
-                     + "A" + dr + ","
-                     + dr + " 0 0,1 "
-                     + d.target.x + ","
-                     + d.target.y;
-           });
-             canvas.selectAll('g.gnode').attr("transform", nodeTransform);
-
-             function nodeTransform(d) {
-               d.x =  Math.max(10, Math.min(window.innerWidth/2 - (35), d.x));
-               d.y =  Math.max(10, Math.min(window.innerHeight/2 - (35), d.y));
-               return "translate(" + d.x + "," + d.y + ")";
-             }
-           })
-         }
-              // // Update links.
-              // canvas
-              //     .selectAll("line")
-              //     .attr("x1", d => d.source.x)
-              //     .attr("x2", d => d.target.x)
-              //     .attr("y1", d => d.source.y)
-              //     .attr("y2", d => d.target.y);
-              //
-              // // Update nodes
-              // canvas
-              //     .selectAll("g.gnode")
-              //     .attr("cx", d => d.x)
-              //     .attr("cy", d => d.y);
-              //
-              // draw();
+            for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+              simulation.tick();
+            }
+            draw();
+         })
+        }
       })
     }
   }
