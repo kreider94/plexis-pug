@@ -6,6 +6,9 @@ html, body, svg {
   left: 0;
 }
 
+body {
+  background-color: #000;
+}
 .links line {
   /*stroke: #999;*/
   stroke: url(#linear-gradient);
@@ -103,16 +106,13 @@ div>a {
 }
 
 #logo {
-  -webkit-filter: invert(100%);
   position: absolute;
   padding-left: 1%;
   padding-top: 1%;
-  color: black;
-  font-color: black;
-  font-family: 'Istok Web', sans-serif;
   width: 320px;
   font-size: 5em;
   font-weight: bold;
+  filter: invert(0);
 }
 
 #middlelogo {
