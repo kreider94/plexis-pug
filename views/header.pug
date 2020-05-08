@@ -1,0 +1,15 @@
+img(id='logo' src='/gfx/logo.png')
+input(id='searchsc', type='text', placeholder=' Search by username.. ')
+#signedinuser
+  button(class='disconnect' onclick='disconnect()')
+  script.
+    function disconnect() {
+      SC.initialize({ client_id: null })
+      $('#landing-wrapper').show();
+      $('#wrapper').css('background-image', 'url("/gfx/plexis-bg.jpg")');
+      $('svg').remove();
+      $('#artist').remove();
+      $('#signedinuser').hide();
+      $('#searchsc').css('display', 'none');
+    }
+  img(class='avatar')

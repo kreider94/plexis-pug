@@ -1,42 +1,50 @@
 {
-  "name": "singlepage",
-  "version": "0.0.1",
-  "private": true,
-  "config": {
-    "port": "8080"
-  },
+  "name": "plexis",
+  "version": "1.0.0",
+  "description": "Plexis",
   "scripts": {
-    "start": "node ./bin/server.js",
-    "prepublish": "jake build"
-  },
-  "engines": {
-    "node": "0.8.x"
+    "dev": "NODE_ENV=development ./node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run postinstall && node app.js",
+    "postinstall": "./node_modules/.bin/gulp"
   },
   "dependencies": {
-    "amd": "0.0.0",
     "body-parser": "^1.19.0",
-    "browserify": "^16.5.0",
-    "commonjs": "0.0.1",
-    "compression": "^1.7.4",
+    "bootstrap": "^4.4.1",
+    "browser-sync": "^2.26.7",
+    "child_process": "^1.0.2",
+    "commonjs": "^0.0.1",
     "connect": "^3.7.0",
     "d3": "^5.15.0",
     "define": "^1.0.1",
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cli": "^2.2.0",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "jade": "^1.11.0",
     "jquery": "^3.4.1",
     "method-override": "^3.0.0",
     "neo4j-driver": "^4.0.2",
-    "parse5": "^5.1.1",
+    "nodemon": "^2.0.3",
+    "path": "^0.12.7",
+    "postinstall": "^0.7.0",
+    "pug": "^2.0.4",
     "requirejs": "^2.3.6",
     "rollup": "^2.2.0",
     "serve-static": "^1.14.1"
   },
-  "devDependencies": {
-    "clean-css": "latest",
-    "css-b64-images": "latest",
-    "jake": "file:jake",
-    "jsdom": "^10.0.0",
-    "jshint": "latest",
-    "uglify-js": "latest",
-    "xxxxx": "^1.0.3"
-  }
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreider94/plexis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kreider94/plexis/issues"
+  },
+  "homepage": "https://github.com/kreider94/plexis#readme"
 }

@@ -1,0 +1,199 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  left: 0; }
+
+svg {
+  width: auto;
+  height: 100%;
+  top: -70px;
+  display: inline-block;
+  position: relative;
+  float: right; }
+
+#header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100px;
+  opacity: 100%;
+  z-index: 4;
+  justify-content: space-between; }
+  #header #logo {
+    position: relative;
+    height: 90px;
+    width: 330px;
+    font-size: 5em;
+    cursor: pointer;
+    top: 15px;
+    margin-left: 15px;
+    font-weight: bold;
+    -webkit-filter: invert(0);
+    filter: invert(0); }
+  #header #searchsc {
+    display: none;
+    position: relative;
+    width: 500px;
+    top: 15px;
+    height: 50px;
+    background-color: #c3c3c3;
+    border-radius: 10px; }
+  #header #signedinuser {
+    display: none;
+    float: right;
+    margin-right: 15px;
+    align-items: center;
+    justify-content: center; }
+    #header #signedinuser .disconnect {
+      background-image: url("/gfx/disconnect-sc.png");
+      display: block;
+      width: 140px;
+      height: 29px;
+      margin-top: -25px;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer; }
+    #header #signedinuser .avatar {
+      position: relative;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      border-radius: 3px;
+      border: 1px solid black; }
+
+.credit {
+  position: absolute;
+  bottom: 15px;
+  right: 15px; }
+
+#artist {
+  display: none;
+  position: fixed;
+  float: left;
+  padding-top: 15px;
+  width: 180px;
+  height: 100%; }
+  #artist .username {
+    font-size: 22px;
+    position: relative;
+    width: auto;
+    left: 15px;
+    height: 35px;
+    color: white;
+    z-index: 100; }
+  #artist .user_avatar {
+    position: relative;
+    top: 5px;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    text-transform: capitalize;
+    border-radius: 4px; }
+  #artist .follow {
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    -webkit-filter: invert(1);
+    filter: invert(1); }
+  #artist #sc-widget {
+    position: fixed;
+    display: block;
+    width: 180px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 100; }
+
+#wrapper {
+  background-image: url("/gfx/plexis-bg.jpg");
+  background-color: #343a40;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+#landing-wrapper {
+  margin-left: 150px;
+  padding-top: 200px; }
+  #landing-wrapper .landing-headline, #landing-wrapper .landing-subheadline {
+    color: white;
+    font-family: 'raleway SemiBold'; }
+  #landing-wrapper .landing-headline {
+    font-size: 50px; }
+  #landing-wrapper .landing-subheadline {
+    font-size: 20px; }
+  #landing-wrapper #login-sc {
+    cursor: pointer; }
+
+body {
+  background-color: #000; }
+
+.gnode {
+  cursor: pointer;
+}
+
+div > a {
+  text-transform: capitalize;
+  background-color: black;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold; }
+
+
+#login-sc {
+  position: relative;
+  display: block;
+  background-image: url("/gfx/connect-sc.png");
+  width: 242px;
+  height: 30px;
+  border-radius: 10px; }
+
+.pathdash {
+  stroke-dasharray: 800;
+  -webkit-animation: draw 2s ease-in;
+  animation: draw 2s ease-in;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes draw {
+  from {
+    stroke-dashoffset: 1400; }
+  to {
+    stroke-dashoffset: 2000; } }
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1400; }
+  to {
+    stroke-dashoffset: 2000; } }
+
+.hoverdash {
+  stroke-dasharray: 20;
+  -webkit-animation: draw 4s linear;
+  animation: draw 4s linear;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s; }
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1400; }
+  to {
+    stroke-dashoffset: 2000; } }
+
+#deezer-widget {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%; }
+
+/*# sourceMappingURL=core.css.map */
